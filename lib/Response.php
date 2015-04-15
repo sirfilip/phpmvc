@@ -10,6 +10,10 @@ class Response {
     return (new Response())->set_status(404)->set_content($message);
   }
 
+  static function json($content = array()) {
+    return (new Response())->set_header('Content-type', 'application/json')->set_content(json_encode($content));
+  }
+
   public function __construct() {}
 
   public function send_headers() 

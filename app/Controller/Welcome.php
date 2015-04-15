@@ -19,4 +19,8 @@ class Welcome {
     return (new \Response)->set_content("Welcome controller params action with $one and $two");
   }
 
+  public function action_json() {
+    return (\Response::json(array('one' => 1)));
+  }
+
 }
